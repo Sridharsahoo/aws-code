@@ -24,7 +24,7 @@ Role: create new role from templates
 Role name: lambdaRoleForSQSPermissions
 Add policy templates: "Simple microservice permissions" and "Amazon SQS poller permissions"
 	
-4. From actions menu in front of function code heading upload a zip file (DCTProductVisitsTracking.zip)
+4. From actions menu in front of function code heading upload a zip file (CTProductVisitsTracking.zip)
 5. Go back to SQS and open "ProductVisitsDataQueue"
 6. Configure Lambda function trigger and specify Lambda function:
 
@@ -58,20 +58,20 @@ Use case: Lambda
 Policy: productVisitsLoadingLambdaPolicy
 Name: productVisitsLoadingLambdaRole
 
-6. Unzip "DCTProductVisitsDataLake.zip" 
+6. Unzip "CTProductVisitsDataLake.zip" 
 7. Edit index.js and update bucket name entry:
 
 Bucket: 'product-visits-datalake'
 Note: Change bucket name to YOUR bucket name
 
-8. Then zip up contents (don't zip the whole folder) into "DCTProductVisitsDataLake.zip"
+8. Then zip up contents (don't zip the whole folder) into "CTProductVisitsDataLake.zip"
 9. Create a function:
 
 Name: productVisitsDatalakeLoadingHandler
 Runtime: Node.js 20.x
 Role: productVisitsLoadingLambdaRole
 	
-10. Upload the code: DCTProductVisitsDataLake.zip
+10. Upload the code: CTProductVisitsDataLake.zip
 11. Go to DynamoDB and configure the table
 12. Choose "Export and streams", and under "DynamoDB stream detils, create a trigger
 13. Select function:
@@ -98,7 +98,7 @@ Use case: Lambda
 Policy: productVisitsSendMessageLambdaPolicy
 Name: productVisitsSendMessageLambdaRole
 	
-3. Unzip "DCTProductVisitForm.zip"
+3. Unzip "CTProductVisitForm.zip"
 4. Edit index.js for backend and update queue name:
 
 QueueUrl: "*QUEUE URL*"

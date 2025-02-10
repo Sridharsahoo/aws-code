@@ -19,7 +19,7 @@ Outbound rule: All traffic to 0.0.0.0/0 (for downloading installation files)
 ## AWS Certificate Manager
 
 1. Request a public certificate
-2. Add your domain name, e.g. dctlabs.com and add another name to the certificate for alb.dctlabs.com (replacing with your domain name)
+2. Add your domain name, e.g. sridharsahoo.com and add another name to the certificate for alb.sridharsahoo.com (replacing with your domain name)
 3. Use DNS validation option and submit the validation to create the records in Route 53
 
 ## Create an SNS Topic
@@ -102,12 +102,12 @@ Objects: Add the following objects from the Code > build-a-secure-multi-tier-arc
 ## Create a CloudFront Distribution
 
 1. Select the ALB
-2. Set the origin domain to your ALB subdomain, e.g. alb.dctlabs.com
+2. Set the origin domain to your ALB subdomain, e.g. alb.sridharsahoo.com
 3. Set protocol  to "HTTPS only"
 4. Set cache policy to "CachingDisabled"
 5. Do not protect with AWS WAF
 6. Select the SSL/TLS certificate from ACM
-7. Add the apex domain name in the alternate domain name (CNAMEs) field, e.g. dctlabs.com
+7. Add the apex domain name in the alternate domain name (CNAMEs) field, e.g. sridharsahoo.com
 8. Add the index.html as the default root object
 
 
@@ -115,11 +115,11 @@ Objects: Add the following objects from the Code > build-a-secure-multi-tier-arc
 
 - Create two records
 
-Name: apex, e.g. dctlabs.com
+Name: apex, e.g. sridharsahoo.com
 Type: A
 Value/Route traffic to: CloudFront distribution
 
-Name: ALB subdomain, e.g. alb.dctlabs.com
+Name: ALB subdomain, e.g. alb.sridharsahoo.com
 Type: A
 Value/Route traffic to: ALB
 
