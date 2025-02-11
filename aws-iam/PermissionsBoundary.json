@@ -17,7 +17,7 @@
                 "iam:SetDefaultPolicyVersion"
             ],
             "Resource": [
-                "arn:aws:iam::144261297793:policy/PermissionsBoundary"
+                "arn:aws:iam::ACCT_ID:policy/PermissionsBoundary"
             ]
         },
         {
@@ -28,12 +28,12 @@
                 "iam:DeleteRolePermissionsBoundary"
             ],
             "Resource": [
-                "arn:aws:iam::144261297793:user/*",
-                "arn:aws:iam::144261297793:role/*"
+                "arn:aws:iam::ACCT_ID:user/*",
+                "arn:aws:iam::ACCT_ID:role/*"
             ],
             "Condition": {
                 "StringEquals": {
-                    "iam:PermissionsBoundary": "arn:aws:iam::144261297793:policy/PermissionsBoundary"
+                    "iam:PermissionsBoundary": "arn:aws:iam::ACCT_ID:policy/PermissionsBoundary"
                 }
             }
         },
@@ -45,12 +45,12 @@
                 "iam:PutRolePermissionsBoundary"
             ],
             "Resource": [
-                "arn:aws:iam::144261297793:user/*",
-                "arn:aws:iam::144261297793:role/*"
+                "arn:aws:iam::ACCT_ID:user/*",
+                "arn:aws:iam::ACCT_ID:role/*"
             ],
             "Condition": {
                 "StringNotEquals": {
-                    "iam:PermissionsBoundary": "arn:aws:iam::144261297793:policy/PermissionsBoundary"
+                    "iam:PermissionsBoundary": "arn:aws:iam::ACCT_ID:policy/PermissionsBoundary"
                 }
             }
         },
@@ -62,12 +62,12 @@
                 "iam:CreateRole"
             ],
             "Resource": [
-                "arn:aws:iam::144261297793:user/*",
-                "arn:aws:iam::144261297793:role/*"
+                "arn:aws:iam::ACCT_ID:user/*",
+                "arn:aws:iam::ACCT_ID:role/*"
             ],
             "Condition": {
                 "StringNotEquals": {
-                    "iam:PermissionsBoundary": "arn:aws:iam::144261297793:policy/PermissionsBoundary"
+                    "iam:PermissionsBoundary": "arn:aws:iam::ACCT_ID:policy/PermissionsBoundary"
                 }
             }
         }
